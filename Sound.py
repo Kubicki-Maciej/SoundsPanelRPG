@@ -1,11 +1,6 @@
 import pygame as pg
-import pathlib
-import os
-
 
 nah = 'E:/SoundsPanel/music/Slither.mp3'
-
-
 
 class SoundsPlayer:
 
@@ -48,9 +43,6 @@ class SoundsPlayer:
 p = SoundsPlayer()
 
 
-music = "Slither.mp3"
-
-
-
-
-
+def test():
+    p.load_file(nah)
+    p.play_sound()
