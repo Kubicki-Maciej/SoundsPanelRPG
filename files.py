@@ -29,6 +29,8 @@ class Files:
         self.objects_music = []
         self.objects_files = []
         self.inicializate_file()
+        self.name = os.path.basename(os.path.normpath(self.full_path))
+
 
     def check_file_format(self, file_name):
         type_file = os.path.splitext(file_name)
@@ -76,14 +78,13 @@ class File:
 
 class FilesExplorer:
     class_list_files = []
-
     StartFirstFile = Files(s.music_path)
     class_list_files.append(StartFirstFile)
 
     def __init__(self):
         self.objects_files = []
-        self.objects_music = []
         self.new_class_files = []
+        self.check_if_are_folder_in_list_object_and_ad_object()
 
     def check_if_are_folder_in_list_object_and_ad_object(self):
         for file in self.new_class_files:
@@ -94,12 +95,12 @@ class FilesExplorer:
                 self.objects_files.append(new_obj_file)
                 self.new_class_files.append(new_obj_file)
 
-
-
 def t():
+
     """tests"""
     F = FilesExplorer()
     F.new_class_files.append(F.StartFirstFile)
+    F.check_if_are_folder_in_list_object_and_ad_object()
 
     return F
 
